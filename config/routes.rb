@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  resources :products
+  get 'products/index'
+  get 'products/show'
+  get 'products/new'
+  get 'products/create'
+  get 'products/edit'
+  get 'products/update'
+  get 'products/destroy'
   devise_for :users, controllers: { registrations: 'users/registrations'}
   root "profiles#index"
   get "/profiles", to: "profiles#index"
