@@ -1,5 +1,6 @@
 <h1>New Product</h1>
-
+<%= link_to 'Back', products_path %>
+<hr/>
 <%= form_for @product, html: { multipart: true } do |f| %>
   <div class="field">
     <%= f.label :name %><br>
@@ -25,4 +26,3 @@
     <%= f.submit %>
   </div>
 <% end %>
-<%= link_to 'Back', products_path(products(1)) %>

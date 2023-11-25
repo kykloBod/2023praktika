@@ -1,6 +1,6 @@
 <h1>Products</h1>
 <hr/>
-
+<%= link_to 'Back', products_path %>
     <h2>Product Name</h2>
     <h2><%= @product.name %></h2>
     <h2>Description</h2>
@@ -9,6 +9,8 @@
     <h2><%= @product.price %></h2>
     <h2>Rating</h2>
     <h2><%= @product.rating %></h2>
-     <%= link_to "Edit Product", edit_product_path %>
     <h2>Photo</h2>
      <%= image_tag @product.avatar.url %>
+     <hr/>
+     <%= link_to "Edit Product", edit_product_path %>
+    
