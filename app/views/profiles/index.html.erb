@@ -8,14 +8,46 @@
 </div>
 </div>
 <hr/> 
-    <p> Здравствуйте <%= current_user.username %> </p>
-    <p> Ваш email: <%= current_user.email %> </p>
-    <p> Ваша фамилия: <%= current_user.first_name %> </p>
-    <p> Ваше имя: <%= current_user.last_name %> </p>
-    <p> Роль на сайте: <%= current_user.role%> </p>
 
-    <% end %>
-    <%= link_to "Изменить информацию", edit_user_registration_path, class:"edit"%><hr/>
-    <%= link_to "Создать продукт", new_product_path %>
+<div class="profile-title"> 
+<p> <span>Welcome</span> <%= current_user.username %>
+    </p> 
+</div>
+<div class="profile_content">  
+    <p>
+        <span>Your email:</span>  
+        <%= current_user.email %>
+    </p> 
+      
+    <p>
+        <span>First name:</span>  
+        <%= current_user.first_name %>
+    </p> 
+      
+    <p>
+        <span>Last name:</span>  
+        <%= current_user.last_name%>
+    </p> 
+      
+    <p>
+        <span>User role:</span>   
+        <%= current_user.role%>
+    </p> 
+     
+    <p>
+        <span>Created:</span>  
+        <%= current_user.created_at%>
+    </p> 
+     
+    <p>
+        <span>Updated:</span>  
+        <%= current_user.updated_at%>
+    </p> 
+     
+    <% end %> 
+    <%= link_to "Edit Account", edit_user_registration_path, class:"edit"%> 
+     
+    <%= link_to "My Products", products_path() %> 
+</div>
     
 </body>
