@@ -1,5 +1,9 @@
+<div class="nav-title">
 <h2>Вход</h2>
 <hr/>
+<%= link_to "<-", :back, class: "home" %>
+</div>
+
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class= "registration">
   <div class="field">

@@ -1,0 +1,2 @@
+module ProductControllerTestHelper
+end
