@@ -1,7 +1,7 @@
 <div class=nav-title>
   <h2>Забіли пароль</h2>
   <hr/>
-  <%= link_to "<-", :back, class: "home" %>
+  <%= link_to "Back", :back, class: "home" %>
 </div>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
