@@ -1,0 +1,5 @@
+<%= form_with url: update_role_path(@user), method: :post do |form| %>
+    <%= form.select :role_id, options_for_select(Role.all.map { |role| [role.name, role.id] }), prompt: 'Выберите роль' %>
+    <%= form.submit 'Изменить роль' %>
+  <% end %>
+  
