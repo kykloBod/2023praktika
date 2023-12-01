@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
               
-  enum role: [:user, :seller, :admin]
+  enum role: [:user, :admin]
   after_initialize :set_default_role, :if => :new_record?
   validates :email, presence: true, uniqueness: true
   validates :username, presence: true, uniqueness: true
@@ -12,6 +12,7 @@ class User < ApplicationRecord
   validates :username, length: {maximum: 20}
   validates :last_name, length: {maximum: 20}
   def set_default_role
-    self.role ||= :user
+    self.role = :user
   end
+ 
 end
