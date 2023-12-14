@@ -1,16 +1,10 @@
-<h1>Products</h1>
-<hr/>
-<%= link_to 'Back', products_path %>
-    <h2>Product Name</h2>
-    <h2><%= @product.name %></h2>
-    <h2>Description</h2>
-    <p><%= @product.description %></p>
-    <h2>Price</h2>
-    <h2><%= @product.price %></h2>
-    <h2>Rating</h2>
-    <h2><%= @product.rating %></h2>
-    <h2>Photo</h2>
-     <%= image_tag @product.avatar.url %>
-     <hr/>
-     <%= link_to "Edit Product", edit_product_path %>
-    
+<p style="color: green"><%= notice %></p>
+
+<%= render @product %>
+
+<div>
+  <%= link_to "Edit this product", edit_product_path(@product) %> |
+  <%= link_to "Back to products", products_path %>
+
+  <%= button_to "Destroy this product", @product, method: :delete %>
+</div>

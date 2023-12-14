@@ -1,15 +1,14 @@
-<div class="product_header">
-  <h1> YOUR PRODUCTS <h1>
-  <%= link_to 'назад', root_path %>
+<p style="color: green"><%= notice %></p>
+
+<h1>Products</h1>
+
+<div id="products">
+  <% @products.each do |product| %>
+    <%= render product %>
+    <p>
+      <%= link_to "Show this product", product %>
+    </p>
+  <% end %>
 </div>
-<hr/>
-<% @products.each do |product| %>
-  <div class = "product_image-container">
-    <p><%= product.name %></p> 
-     
-     <br/>
-  <%= link_to "Show Product", product_path(product), class: "product_show-btn" %>
-     </div>
-<% end %>
-<br/>
-<%= link_to "Create Product", products_new_path, class: "product_create-btn" %>
+
+<%= link_to "New product", new_product_path %>
