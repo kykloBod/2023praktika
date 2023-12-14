@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'cart', to: 'cart#show'
+  post 'cart/add'
+  post 'cart/remove'
   get 'user/controller'
   resources :products
   get 'products/index'
@@ -13,6 +16,7 @@ Rails.application.routes.draw do
   get "/profiles", to: "profiles#index"
 
   Rails.application.routes.draw do
+  get 'cart/show'
   get 'user/controller'
     
     post '/users/:id/update_role', to: 'users#update_role', as: 'update_role'
