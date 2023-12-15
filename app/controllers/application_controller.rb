@@ -8,15 +8,20 @@ class ApplicationController < ActionController::Base
     @render_cart = true
   end
 
-  def initialize_cart
-    @cart ||= Cart.find_by(id: session[:cart_id])
+ 
 
-    return unless @cart.nil?
-
-    @cart = Cart.create
-    session[:cart_id] = @cart.id
+   def initialize_cart
+    if current_user
+      @cart = current_user.cart || current_user.create_cart
+    elsif session[:cart_id] && Cart.exists?(session[:cart_id])
+      @cart = Cart.find(session[:cart_id])
+    else
+      return unless @cart.nil?
+      @cart = Cart.create
+      session[:cart_id] = @cart.id
+    end
   end
-
+ 
 
   private
 
@@ -24,6 +29,4 @@ class ApplicationController < ActionController::Base
     flash[:alert] = 'Упс Ошибка'
     redirect_to root_path
   end
-
-  
 end

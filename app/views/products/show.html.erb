@@ -3,8 +3,11 @@
 <%= render @product %>
 
 <div>
-  <%= link_to "Edit this product", edit_product_path(@product) %> |
+<% if current_user.admin?%>
+  <%= link_to "Edit this product", edit_product_path(@product) %> 
+  <% end%>
   <%= link_to "Back to products", products_path %>
-
+  <% if current_user.admin?%>
   <%= button_to "Destroy this product", @product, method: :delete %>
+  <% end%>
 </div>

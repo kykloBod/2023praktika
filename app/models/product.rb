@@ -2,7 +2,7 @@ class Product < ApplicationRecord
 
     mount_uploader :avatar, AvatarUploader
     has_many :orderables
-    has_many :carts, through: :orderables
+    
     validates :price, presence: true,
                       length: {maximum: 15},
                       numericality: {

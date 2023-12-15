@@ -17,6 +17,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_14_113435) do
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
   end
 
   create_table "orderables", force: :cascade do |t|

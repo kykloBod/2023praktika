@@ -46,9 +46,10 @@
      
     <% end %> 
     <%= link_to "Edit Account", edit_user_registration_path, class:"edit"%> 
-     <%if current_user&.admin? %>
-    <%= link_to "My Products", products_path() %>
-    <%end%> 
+    
+        <%= link_to "My Products", products_path() %>
+    
+     
 </div>
 
 
